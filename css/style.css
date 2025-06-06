@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'Ust-Labinsk Serif';
+    src: url('../fonts/Ust-Labinsk-Serif.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding-top: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Ust-Labinsk Serif', serif;
+    font-size: clamp(24px, 5vw, 36px);
+    text-align: center;
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+/* Табы */
+.tab-buttons-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+}
+
+.tab-buttons-container::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 8px;
+    padding: 5px 15px;
+    width: max-content;
+}
+
+.tab-button {
+    font-family: 'Ust-Labinsk Serif', serif;
+    white-space: nowrap;
+    padding: 10px 16px;
+    background: #f0f0f0;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: clamp(14px, 3vw, 16px);
+    color: #444;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.tab-button.active {
+    background: #2c3e50;
+    color: white;
+    border-color: #2c3e50;
+}
+
+/* Изображения */
+.author-photo, .exhibition-photo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.author-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.photo-work {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Медиазапросы */
+@media (max-width: 768px) {
+    .author-info {
+        flex-direction: column;
+    }
+    .author-photo {
+        max-width: 80%;
+    }
+    .tab-button {
+        padding: 8px 14px;
+    }
+}
+
+@media (min-width: 769px) {
+    .photo-work {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .exhibition-photo {
+        max-width: 50%;
+    }
+}
+
+/* Стили для ссылок */
+a {
+  color: #2c3e50;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #1a5276;
+  text-decoration: none;
+}
+
+/* Для ссылки в описании автора */
+.author-text a {
+  color: #3498db;
+  font-weight: bold;
+}
